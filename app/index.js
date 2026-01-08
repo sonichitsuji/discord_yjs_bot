@@ -46,7 +46,18 @@ client.on("messageCreate", async msg => {
 	}
 });
 
+const http = require("http");
+
+const PORT = process.env.PORT || 3000;
+
+http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("OK");
+}).listen(PORT, () => {
+  console.log(`Health check server running on port ${PORT}`);
+});
 
 
 const token = process.env.DISCORD_TOKEN;
 client.login(token); //Discordにログインする
+
