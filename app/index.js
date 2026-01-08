@@ -47,4 +47,6 @@ client.on("messageCreate", async msg => {
 });
 
 
-client.login('MTQ1ODgwNzAwNjY0NjI0MzQzNA.GyUDfr.oq-KmRY4EDD4J5HRFlMHN-SQhPQHyAkuVgxmMY'); //ログインする
+
+const token = process.env.DISCORD_TOKEN;
+client.login(token); //Discordにログインする
