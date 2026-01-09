@@ -47,6 +47,7 @@ client.on("messageCreate", async msg => {
 });
 
 const http = require("http"); // ← これ1回だけ
+const PORT = process.env.PORT || 3000;
 
 http.createServer((req, res) => {
   if (req.url === "/health") {
@@ -62,6 +63,7 @@ http.createServer((req, res) => {
 
 const token = process.env.DISCORD_TOKEN;
 client.login(token); //Discordにログインする
+
 
 
 
