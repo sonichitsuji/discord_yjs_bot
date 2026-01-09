@@ -46,20 +46,7 @@ client.on("messageCreate", async msg => {
 	}
 });
 
-const http = require("http");
-
-const PORT = process.env.PORT || 3000;
-
-http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("OK");
-}).listen(PORT, () => {
-  console.log(`Health check server running on port ${PORT}`);
-});
-
-const http = require("http");
-
-const PORT = process.env.PORT || 3000;
+const http = require("http"); // ← これ1回だけ
 
 http.createServer((req, res) => {
   if (req.url === "/health") {
@@ -71,9 +58,10 @@ http.createServer((req, res) => {
   }
 }).listen(PORT, () => {
   console.log(`Health check server running on port ${PORT}`);
-}); //サーバー起こす
+});
 
 const token = process.env.DISCORD_TOKEN;
 client.login(token); //Discordにログインする
+
 
 
