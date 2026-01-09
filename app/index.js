@@ -39,8 +39,6 @@ const http = require("http");
 
 // 語録読み込み
 const analectsPath = path.join(__dirname, "analects.js");
-let analects = require("./analects.js");
-
 
 client.once('clientReady', () => { //ここにボットが起動した際のコードを書く(一度のみ実行)
 	console.log('起動完了'); //コンソールに表示
