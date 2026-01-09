@@ -49,8 +49,7 @@ client.on("messageCreate", async msg => {
 	const matched = analects.find(word => msg.content.includes(word));
 	if (matched) {
 		msg.reply(
-			`淫夢語録を検出しました。
-			該当部分:「${matched}」`);
+			`淫夢語録を検出しました。\n該当部分:「${matched}」`);
 		return;
 	}
 });
